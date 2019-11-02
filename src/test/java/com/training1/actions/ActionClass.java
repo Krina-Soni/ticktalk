@@ -39,7 +39,7 @@ public class ActionClass {
             if(element.isDisplayed())
             {
                 element.click();
-               test.log(Status.INFO,"Sucessfully clicked on object : "+element.getAttribute("name"));
+                test.log(Status.INFO,"Sucessfully clicked on object : "+element.getAttribute("name"));
                 System.out.println("Sucessfully clicked on object : "+element.getAttribute("name"));
             }
             else

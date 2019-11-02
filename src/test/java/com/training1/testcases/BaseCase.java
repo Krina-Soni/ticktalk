@@ -16,7 +16,8 @@ public class BaseCase extends ReportClass {
     @BeforeMethod
     public void initialize() throws SQLException
     {
-        System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir")+"chromedriver");
+        //System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir")+"chromedriver");
+        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe" );
         driver = new ChromeDriver();
         //driver.get("http://toolsqa.com/automation-practice-form/");
         //driver.get("http://toolsqa.com/automation-practice-table/");

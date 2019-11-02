@@ -1,8 +1,10 @@
 package com.training1.pages;
+import java.io.IOException;
 import java.util.List;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.training1.actions.ActionClass;
+import com.training1.actions.VerificationClass;
 import com.training1.constants.CommonVar;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,6 +30,9 @@ public class Authlogin {
     @FindBy(how = How.XPATH, using = "//*[@id=\"login-card\"]/div[3]/button[1]")
     private WebElement btnLogin;
 
+    @FindBy(how = How.XPATH, using="//*[@id=\"rocket-chat\"]/div[2]/div/form/div[1]/div[2]")
+    private WebElement lblloggedinUser;
+
     public Authlogin(WebDriver driver, ExtentTest test) {
 
         this.driver = driver;
@@ -36,8 +41,8 @@ public class Authlogin {
     }
     public void doSuccessfulLogin() throws InterruptedException {
         ActionClass actionclass = new ActionClass(driver,extentTest);
-        Thread.sleep(8000);
-        actionclass.clickOnObject(lnkrocketchat);
+        //Thread.sleep(8000);
+        lnkrocketchat.click();
         Thread.sleep(12000);
         CommonVar commonVar = new CommonVar();
         actionclass.setValueinTextbox(txtEmail,commonVar.uname);
@@ -54,6 +59,14 @@ public class Authlogin {
         actionclass.setValueinTextbox(txtEmail,username);
         actionclass.setValueinTextbox(txtPassword,password);
         actionclass.clickOnObject(btnLogin);
+
+    }
+
+    public void verifyLoggedInUser(String username) throws IOException {
+        VerificationClass verificationClass=new VerificationClass(driver,extentTest);
+        ActionClass actionclass = new ActionClass(driver,extentTest);
+        verificationClass.verifyTextContains(lblloggedinUser,"You are logged in as\n" +username);
+        actionclass.captureScreen("Valid Login");
 
     }
 
