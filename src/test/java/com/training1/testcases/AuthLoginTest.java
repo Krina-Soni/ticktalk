@@ -9,7 +9,7 @@ public class AuthLoginTest extends BaseCase {
     @Test
     public void Sucessful_login() throws InterruptedException {
         Authlogin login = new Authlogin(driver,logger);
-        logger=extent.createTest("Verify that user is able to login successfully");
+        logger=extent.createTest("Verify that user is able to login successfully to application");
         login.doSuccessfulLogin();
     }
 
