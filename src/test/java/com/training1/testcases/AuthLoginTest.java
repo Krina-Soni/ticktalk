@@ -17,5 +17,14 @@ public class AuthLoginTest extends BaseCase {
         Thread.sleep(5000);
         login.verifyLoggedInUser("harshad");
     }
+    @Test
+    public void unSucessful_login() throws InterruptedException, IOException {
+
+        logger=extent.createTest("Verify that user is able to login with invalid credentials to application");
+        Authlogin login = new Authlogin(driver,logger);
+        login.loginWithCredentials("johnny@gmail.com","addweb123");
+        Thread.sleep(5000);
+        login.verifyLoggedInUser("harshad");
+    }
 
 }
