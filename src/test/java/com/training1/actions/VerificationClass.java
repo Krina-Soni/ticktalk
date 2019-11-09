@@ -40,12 +40,13 @@ public class VerificationClass {
                     test.log(Status.PASS, "Expected value '" + expectedText + "' matches with actual value '" + text
                             + "' for the object : " + element.getAttribute("name"));
                     System.out.println("Expected value '" + expectedText + "' matches with actual value '" + text
-                            + "' for the object : " + element.getAttribute("name"));}
-                else {
+                            + "' for the object : " + element.getAttribute("name"));
+                } else {
                     test.log(Status.FAIL, "Expected value '" + expectedText + "' did not matche with actual value '"
                             + text + "' for the object : " + element.getAttribute("name"));
                     System.out.println("Expected value '" + expectedText + "' did not matche with actual value '"
-                            + text + "' for the object : " + element.getAttribute("name"));}
+                            + text + "' for the object : " + element.getAttribute("name"));
+                }
             } else {
 
                 test.log(Status.FAIL, "Unable to find object : " + element.getAttribute("name"));
@@ -59,7 +60,7 @@ public class VerificationClass {
         }
     }
 
-    public void verifyTextContains(WebElement element, String expectedText) {
+    public void lblloggedinUser(WebElement element, String expectedText) {
         try {
             if (element.isDisplayed()) {
                 String text = element.getText();
@@ -67,12 +68,13 @@ public class VerificationClass {
                     test.log(Status.PASS, "Actual text '" + text + "' contains the expected text '" + expectedText
                             + "' for the object : " + element.getAttribute("name"));
                     System.out.println("Actual text '" + text + "' contains the expected text '" + expectedText
-                            + "' for the object : " + element.getAttribute("name"));}
-                else {
+                            + "' for the object : " + element.getAttribute("name"));
+                } else {
                     test.log(Status.FAIL, "Expected value '" + expectedText + "' did not matche with actual value '"
                             + text + "' for the object : " + element.getAttribute("name"));
                     System.out.println("Expected value '" + expectedText + "' did not matche with actual value '"
-                            + text + "' for the object : " + element.getAttribute("name"));}
+                            + text + "' for the object : " + element.getAttribute("name"));
+                }
             } else {
 
                 test.log(Status.FAIL, "Unable to find object : " + element.getAttribute("name"));
@@ -86,5 +88,21 @@ public class VerificationClass {
         }
     }
 
+    public void verifyElementNotPresent(WebElement element) {
+        try {
+            if (element.isDisplayed() == false) {
+                test.log(Status.PASS, "Element is not present for object : " + element.getAttribute("name"));
+                System.out.println("Element is not present for object : " + element.getAttribute("name"));
+            } else {
+                test.log(Status.FAIL, "Element is  present for object : " + element.getAttribute("name"));
+                System.out.println("Element is present for object : " + element.getAttribute("name"));
+            }
+        } catch (Exception e) {
 
+            // TODO: handle exception
+            // logger.log(Status.ERROR, "Error in performing action");
+            System.out.println(e.getStackTrace());
+        }
+    }
 }
+

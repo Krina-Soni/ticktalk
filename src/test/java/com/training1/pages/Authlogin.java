@@ -51,10 +51,10 @@ public class Authlogin {
 
     }
 
-    public void loginWithCredentials(String username, String password)
-    {
+    public void loginWithCredentials(String username, String password) throws InterruptedException {
         ActionClass actionclass = new ActionClass(driver,extentTest);
-        actionclass.clickOnObject(lnkrocketchat);
+        lnkrocketchat.click();
+        Thread.sleep(12000);
         CommonVar commonVar = new CommonVar();
         actionclass.setValueinTextbox(txtEmail,username);
         actionclass.setValueinTextbox(txtPassword,password);
@@ -65,8 +65,16 @@ public class Authlogin {
     public void verifyLoggedInUser(String username) throws IOException {
         VerificationClass verificationClass=new VerificationClass(driver,extentTest);
         ActionClass actionclass = new ActionClass(driver,extentTest);
-        verificationClass.verifyTextContains(lblloggedinUser,"You are logged in as\n" +username);
+        verificationClass.verifyTextPresent(lblloggedinUser,"You are logged in as\n" +username);
         actionclass.captureScreen("Valid Login");
+
+    }
+
+    public void verifyUserIsNotLoggedIn() throws IOException {
+        VerificationClass verificationClass=new VerificationClass(driver,extentTest);
+        ActionClass actionclass = new ActionClass(driver,extentTest);
+        verificationClass.verifyElementNotPresent(lblloggedinUser);
+        actionclass.captureScreen("Invalid Login");
 
     }
 
