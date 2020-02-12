@@ -1,3 +1,4 @@
+package com.training1.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

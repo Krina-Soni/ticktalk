@@ -21,7 +21,7 @@ public class ReportClass {
     @BeforeSuite
     public void initReport() throws SQLException
     {
-        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/AddWeb_TimeSheet_ExecutionReport.html");
+        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/Opera_Report.html");
         extent = new ExtentReports ();
         extent.attachReporter(htmlReporter);
         extent.setSystemInfo("Host Name", "AddWeb Timesheet");

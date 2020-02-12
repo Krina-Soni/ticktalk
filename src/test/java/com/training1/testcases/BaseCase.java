@@ -23,23 +23,26 @@ public class BaseCase extends ReportClass {
         options.addArguments("headless");
 
         //System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe" );
-        driver = new ChromeDriver(options);
+        //driver = new ChromeDriver(options);
         //driver.get("http://toolsqa.com/automation-practice-form/");
         //driver.get("http://toolsqa.com/automation-practice-table/");
         //driver.get("http://toolsqa.com/handling-alerts-using-selenium-webdriver/");
-        CommonVar common = new CommonVar();
+               //System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir")+"chromedriver");
+        driver = new ChromeDriver();
+        CommonVar common=new CommonVar();
         driver.get(common.url);
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
+
     }
 
 
     /*
  Below method will execute after each testcase.
      */
-    @AfterMethod
-    public void tearDown()
-    {
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void tearDown()
+//    {
+//        driver.quit();
+//    }
 }
 

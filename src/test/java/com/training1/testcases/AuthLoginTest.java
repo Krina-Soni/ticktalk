@@ -1,6 +1,7 @@
 package com.training1.testcases;
 
 
+import com.training1.pages.AddLead;
 import com.training1.pages.Authlogin;
 import org.testng.annotations.Test;
 
@@ -14,8 +15,11 @@ public class AuthLoginTest extends BaseCase {
         logger=extent.createTest("Verify that user is able to login successfully to application");
         Authlogin login = new Authlogin(driver,logger);
         login.doSuccessfulLogin();
+        Thread.sleep(3000);
+        login.verifyLoggedInUser("Dashboard");
+        AddLead HoverMenu = new AddLead(driver);
+        HoverMenu.AddLead();
         Thread.sleep(5000);
-        login.verifyLoggedInUser("harshad");
     }
     @Test
     public void unSucessful_login() throws InterruptedException, IOException {
@@ -24,7 +28,7 @@ public class AuthLoginTest extends BaseCase {
         Authlogin login = new Authlogin(driver,logger);
         login.loginWithCredentials("harshad.addweb@gmail.com","addweb123");
         Thread.sleep(5000);
-       login.verifyUserIsNotLoggedIn();
+        login.verifyUserIsNotLoggedIn();
     }
 
 }

@@ -43,7 +43,7 @@ public class VerificationClass {
                             + "' for the object : " + element.getAttribute("name"));
                 } else {
                     test.log(Status.FAIL, "Expected value '" + expectedText + "' did not matche with actual value '"
-                            + text + "' for the object : " + element.getAttribute("name"));
+                            + text + "' for the objectverifyLoggedInUser : " + element.getAttribute("name"));
                     System.out.println("Expected value '" + expectedText + "' did not matche with actual value '"
                             + text + "' for the object : " + element.getAttribute("name"));
                 }

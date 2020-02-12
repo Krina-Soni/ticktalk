@@ -33,6 +33,9 @@ public class Authlogin {
     @FindBy(how = How.XPATH, using="//*[@id=\"rocket-chat\"]/div[2]/div/form/div[1]/div[2]")
     private WebElement lblloggedinUser;
 
+    @FindBy(how = How.XPATH, using="//*[@id=\"rocket-chat\"]/div[2]/div/form/div[3]/button[3]")
+    private WebElement btnAuthorize;
+
     public Authlogin(WebDriver driver, ExtentTest test) {
 
         this.driver = driver;
@@ -48,6 +51,8 @@ public class Authlogin {
         actionclass.setValueinTextbox(txtEmail,commonVar.uname);
         actionclass.setValueinTextbox(txtPassword,commonVar.pass);
         actionclass.clickOnObject(btnLogin);
+        Thread.sleep(5000);
+        actionclass.clickOnObject(btnAuthorize);
 
     }
 
