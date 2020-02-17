@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -39,13 +40,13 @@ public class ActionClass {
             if(element.isDisplayed())
             {
                 element.click();
-                test.log(Status.INFO,"Sucessfully clicked on object : "+element.getAttribute("name"));
-                System.out.println("Sucessfully clicked on object : "+element.getAttribute("name"));
+                test.log(Status.INFO,"Sucessfully clicked on object : ");
+                System.out.println("Sucessfully clicked on object : ");
             }
             else
             {
-                System.out.println("Unable to find object : "+element.getAttribute("name"));
-                test.log(Status.FAIL,"Unable to find object : "+element.getAttribute("name"));
+                System.out.println("Unable to find object");
+                test.log(Status.FAIL,"Unable to find object");
             }
         }
         catch (Exception e)
@@ -60,15 +61,17 @@ public class ActionClass {
         try {
             if(element.isDisplayed())
             {
-                element.clear();
+                element.click();
+//                element.clear();
                 element.sendKeys(value);
-                System.out.println("Succesfully entered '"+value+"' in object :" + element.getAttribute("name"));
-                test.log(Status.INFO,"Succesfully entered '"+value+"' in object :" + element.getAttribute("name"));
+                element.sendKeys(Keys.ENTER);
+                System.out.println("Succesfully entered '"+value+"' in object :");
+                test.log(Status.INFO,"Succesfully entered '"+value+"' in object :");
             }
             else
             {
-                System.out.println("Unable to find object : "+element.getAttribute("name"));
-                test.log(Status.FAIL,"Unable to find object : "+element.getAttribute("name"));
+                System.out.println("Unable to find object");
+                test.log(Status.FAIL,"Unable to find object");
 
             }
         }
@@ -78,7 +81,83 @@ public class ActionClass {
             test.log(Status.FAIL,e.getMessage());
         }
     }
+    public void setValueinURLField(WebElement element, String value) {
+        try{
+            if (element.isDisplayed()){
+                element.click();
+                element.clear();
+                element.sendKeys(value);
+            }else
+                System.out.println("Element is not displayed");
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void setValueinNewURLField(WebElement element) {
 
+        try{
+            if (element.isDisplayed()){
+                element.click();
+                element.sendKeys("https://javascript123.info/url");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void setValueinPortalField(WebElement element) {
+
+        try{
+            if(element.isDisplayed()){
+                element.click();
+                element.sendKeys("Elance");
+                element.sendKeys(Keys.ENTER);
+                element.click();
+                element.sendKeys("Freelancer");
+                element.sendKeys(Keys.ENTER);
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void setValueinTagsfield(WebElement element) {
+        try {
+            if(element.isDisplayed()){
+                element.click();
+                element.sendKeys("10 minutes Free sessions");
+                element.sendKeys(Keys.ENTER);
+                element.click();
+                element.sendKeys("64 bit architecture");
+                element.sendKeys(Keys.ENTER);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void CompareList(ArrayList listNames, ArrayList listNames1)
+    {
+        try {
+            if(listNames.equals(listNames1)==true)
+            {
+                test.log(Status.INFO,"Result Matched with DB");
+                System.out.println("Result Matched with DB");
+
+            }
+            else
+            {
+                System.out.println("Result Doesn't match with DB");
+                test.log(Status.FAIL,"Result Doesn't match with DB");
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL,e.getMessage());
+        }
+    }
     public void captureScreen(String testcaseName) throws IOException {
         DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_HH_MM_SS");
         Date date = new Date();

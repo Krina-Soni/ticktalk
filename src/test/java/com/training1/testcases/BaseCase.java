@@ -31,7 +31,7 @@ public class BaseCase extends ReportClass {
         driver = new ChromeDriver();
         CommonVar common=new CommonVar();
         driver.get(common.url);
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
 
     }
 

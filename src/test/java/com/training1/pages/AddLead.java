@@ -41,12 +41,12 @@ public class AddLead {
     public void AddLead() throws InterruptedException {
 
     Actions actions = new Actions(driver);
-        ActionClass actionClass = new ActionClass(driver,extentTest);
-        WebElement menuOption = SidebarOPen;
-        actions.moveToElement(menuOption).perform();
-        System.out.println("Successfully Hovered over the Menu");
-        actionClass.clickOnObject(AccessLead);
-        actionClass.clickOnObject(LeadManage);
+//        ActionClass actionClass = new ActionClass(driver,extentTest);
+//        WebElement menuOption = SidebarOPen;
+//        actions.moveToElement(menuOption).perform();
+//        System.out.println("Successfully Hovered over the Menu");
+//        actionClass.clickOnObject(AccessLead);
+//        actionClass.clickOnObject(LeadManage);
 
 //        WebElement menuOptionLM = LeadManagement;
 //        actions.moveToElement(menuOptionLM).perform();
