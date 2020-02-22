@@ -22,6 +22,7 @@ public class BaseCase extends ReportClass {
         options.addArguments("--remote-debugging-port=9222");
         options.addArguments("headless");
         options.addArguments("--no-sandbox");
+        WebDriver driver = new ChromeDriver();
 
         //System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe" );
         //driver = new ChromeDriver(options);
