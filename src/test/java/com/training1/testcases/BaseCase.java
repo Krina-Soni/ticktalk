@@ -17,7 +17,7 @@ public class BaseCase extends ReportClass {
     @BeforeMethod
     public void initialize() throws SQLException
     {
-        System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir")+"chromedriver");
+        //System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir")+"chromedriver");
         ChromeOptions options=new ChromeOptions();
         options.addArguments("--remote-debugging-port=9222");
         options.addArguments("headless");
@@ -28,10 +28,10 @@ public class BaseCase extends ReportClass {
         //driver.get("http://toolsqa.com/automation-practice-table/");
         //driver.get("http://toolsqa.com/handling-alerts-using-selenium-webdriver/");
                //System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir")+"chromedriver");
-        driver = new ChromeDriver();
-        CommonVar common=new CommonVar();
-        driver.get(common.url);
-        driver.manage().window().maximize();
+//        driver = new ChromeDriver();
+//        CommonVar common=new CommonVar();
+//        driver.get(common.url);
+//        driver.manage().window().maximize();
 
     }
 
