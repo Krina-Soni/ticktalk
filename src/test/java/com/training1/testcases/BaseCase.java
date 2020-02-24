@@ -18,22 +18,23 @@ public class BaseCase extends ReportClass {
     public void initialize() throws SQLException
     {
         System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir")+"chromedriver");
+
         ChromeOptions options=new ChromeOptions();
         options.addArguments("--remote-debugging-port=9222");
         options.addArguments("headless");
         options.addArguments("--no-sandbox");
-        WebDriver driver = new ChromeDriver();
-
-        //System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe" );
-        //driver = new ChromeDriver(options);
-        //driver.get("http://toolsqa.com/automation-practice-form/");
-        //driver.get("http://toolsqa.com/automation-practice-table/");
-        //driver.get("http://toolsqa.com/handling-alerts-using-selenium-webdriver/");
-               //System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir")+"chromedriver");
-//        driver = new ChromeDriver();
-//        CommonVar common=new CommonVar();
-//        driver.get(common.url);
-//        driver.manage().window().maximize();
+//        WebDriver driver = new ChromeDriver();
+//
+//        //System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe" );
+//        //driver = new ChromeDriver(options);
+//        //driver.get("http://toolsqa.com/automation-practice-form/");
+//        //driver.get("http://toolsqa.com/automation-practice-table/");
+//        //driver.get("http://toolsqa.com/handling-alerts-using-selenium-webdriver/");
+        System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir")+"chromedriver");
+        driver = new ChromeDriver();
+        CommonVar common=new CommonVar();
+        driver.get(common.url);
+        driver.manage().window().maximize();
 
     }
 
