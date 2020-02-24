@@ -17,7 +17,7 @@ public class BaseCase extends ReportClass {
     @BeforeMethod
     public void initialize() throws SQLException
     {
-        System.setProperty("Webdriver.chrome.driver","/opt/google/chrome/google-chrome-stable.1");
+        System.setProperty("Webdriver.chrome.driver","/usr/bin/google-chrome");
 
         ChromeOptions options=new ChromeOptions();
         options.addArguments("--remote-debugging-port=9222");
