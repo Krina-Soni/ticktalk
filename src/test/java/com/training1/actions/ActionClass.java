@@ -137,26 +137,43 @@ public class ActionClass {
             e.printStackTrace();
         }
     }
-    public void CompareList(ArrayList listNames, ArrayList listNames1)
-    {
+    public void CompareList(ArrayList listNames, ArrayList listNames1) {
         try {
-            if(listNames.equals(listNames1)==true)
-            {
-                test.log(Status.INFO,"Result Matched with DB");
+            if (listNames.equals(listNames1) == true) {
+                test.log(Status.INFO, "Result Matched with DB");
                 System.out.println("Result Matched with DB");
 
-            }
-            else
-            {
+            } else {
                 System.out.println("Result Doesn't match with DB");
-                test.log(Status.FAIL,"Result Doesn't match with DB");
+                test.log(Status.FAIL, "Result Doesn't match with DB");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL, e.getMessage());
+        }
+    }
+        public void checkToast(WebElement element, String expectedText) {
+        try {
+            if (element.isDisplayed())
+            {
+                String text = element.getText();
+                if (text.contains(expectedText)) {
+                    System.out.println("Please Check the validation");
+                    test.log(Status.FAIL,"Please Check the validation");
+                    System.out.println(expectedText);
+                }
+                else
+                {
+                    System.out.println("Details are Valid");
+                    test.log(Status.INFO,"Details are Valid");
+                }
             }
         }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
+        catch(Exception e){
+            System.out.println(e);
             test.log(Status.FAIL,e.getMessage());
         }
+
     }
     public void captureScreen(String testcaseName) throws IOException {
         DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_HH_MM_SS");
