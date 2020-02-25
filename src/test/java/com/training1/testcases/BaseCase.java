@@ -17,10 +17,11 @@ public class BaseCase extends ReportClass {
     @BeforeMethod
     public void initialize() throws SQLException
     {
-        System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir")+"chromedriver");
+        System.setProperty("Webdriver.chrome.driver","/usr/local/share/chromedriver");
 
         ChromeOptions options=new ChromeOptions();
         options.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
+        options.setBinary("/usr/bin/google-chrome");
         WebDriver driver = new ChromeDriver();
 //
 //        //System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe" );
