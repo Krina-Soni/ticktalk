@@ -17,7 +17,7 @@ public class BaseCase extends ReportClass {
     @BeforeMethod
     public void initialize() throws SQLException
     {
-        System.setProperty("Webdriver.chrome.driver","/usr/local/share/chromedriver");
+        System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir")+"chromedriver");
 
         ChromeOptions options=new ChromeOptions();
         options.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
