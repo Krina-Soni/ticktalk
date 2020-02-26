@@ -21,7 +21,7 @@ public class BaseCase extends ReportClass {
 
         ChromeOptions options=new ChromeOptions();
         options.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
-        options.setBinary("/usr/bin/google-chrome");
+        options.setBinary("/opt/google/chrome/google-chrome");
         WebDriver driver = new ChromeDriver();
 //
 //        //System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe" );
