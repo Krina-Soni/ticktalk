@@ -23,9 +23,9 @@ public class BaseCase extends ReportClass {
         options.addArguments("headless");
 
 //        System.setProperty("Webdriver.chrome.driver",System.getProperty("user.dir")+"chromedriver");
-//        driver = new ChromeDriver();
-//        CommonVar common = new CommonVar();
-//        driver.get(common.url);
+        driver = new ChromeDriver(options);
+        CommonVar common = new CommonVar();
+        driver.get(common.url);
 //        driver.manage().window().maximize();
 
     }
