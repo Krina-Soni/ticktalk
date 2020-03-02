@@ -21,6 +21,7 @@ public class BaseCase extends ReportClass {
                 ChromeOptions options=new ChromeOptions();
                 options.addArguments("--remote-debugging-port=9222");
                 options.addArguments("headless");
+                options.setExperimentalOption("useAutomationExtension", false);
                 options.addArguments("start-maximized"); // open Browser in maximized mode
                 options.addArguments("disable-infobars"); // disabling infobars
                 options.addArguments("--disable-extensions"); // disabling extensions
