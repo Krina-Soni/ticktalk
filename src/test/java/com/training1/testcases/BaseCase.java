@@ -22,10 +22,10 @@ public class BaseCase extends ReportClass {
 //                options.addArguments("--no-sandbox","--disable-dev-shm-usage"); // overcome limited resource problems
 //                options.addArguments("--remote-debugging-port=9222");
 //                options.addArguments("headless");
+                options.addArguments("--no-sandbox");
                 options.addArguments("--headless");
                 options.addArguments("--disable-gpu");
                 options.addArguments("window-size=1024,768");
-                options.addArguments("--no-sandbox");
                 // Bypass OS security model
                // WebDriver driver = new ChromeDriver(options);
 
